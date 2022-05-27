@@ -1,0 +1,42 @@
+{
+  "name": "week-15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "dottie": "^2.0.2",
+    "inflection": "^1.13.2",
+    "lodash": "^4.17.21",
+    "lru-cache": "^6.0.0",
+    "moment": "^2.29.3",
+    "moment-timezone": "^0.5.34",
+    "ms": "^2.1.2",
+    "mysql2": "^2.3.3",
+    "pg-connection-string": "^2.5.0",
+    "retry-as-promised": "^5.0.0",
+    "semver": "^7.3.7",
+    "sequelize": "^6.20.0",
+    "sequelize-pool": "^7.1.0",
+    "toposort-class": "^1.0.1",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0",
+    "wkx": "^0.5.0",
+    "yallist": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulwon2223/Group-Project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulwon2223/Group-Project-2/issues"
+  },
+  "homepage": "https://github.com/paulwon2223/Group-Project-2#readme"
+}
