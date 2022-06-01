@@ -1,1 +1,2 @@
-.env
+.env.EXAMPLE
+node_modules
