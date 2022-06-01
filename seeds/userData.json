@@ -1,0 +1,30 @@
+[
+    {
+        "first_name": "Jeremiah",
+        "last-name": "Cole",
+        "email": "colewrld04@gmail.com",
+        "user_id": "colewrld04",
+        "password": "password123"
+    },
+    {
+        "first_name": "Luke",
+        "last-name": "Doncic",
+        "email": "lDoncic@yahoo.com",
+        "user_id": "Luka_Donc3pt",
+        "password": "password456"
+    },
+    {
+        "first_name": "Kanye",
+        "last-name": "West",
+        "email": "yeezy@aol.com",
+        "user_id": "ye",
+        "password": "password789"
+    },
+    {
+        "first_name": "Gunna",
+        "last-name": "Kitchens",
+        "email": "trapaGunna@apple.com",
+        "user_id": "yunggunna",
+        "password": "password098"
+    }
+]
