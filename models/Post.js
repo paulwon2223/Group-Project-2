@@ -12,10 +12,10 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
-            type: DataTypes.STRING,
+        profile_id: {
+            type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'profile',
                 key: 'id'
             }
         },

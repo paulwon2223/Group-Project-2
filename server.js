@@ -1,4 +1,5 @@
 // requiring neccessary dependencies
+require('dotenv').config();
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
@@ -17,13 +18,13 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  // secret: process.env,
-  // cookie: {},
-  // resave: false,
-  // saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize,
-  // }),
+  secret: process.env.SECRET,
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -39,6 +40,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 // connecting to sequelize server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });

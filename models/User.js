@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 // password bcypt goes here
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPW) {
+        return bcrypt.compareSync(loginPW, this.password);
+    }
+}
 
 User.init(
     {
@@ -29,17 +33,13 @@ User.init(
                 isEmail: true,
             }
         },
-        user_id: {
+        user_name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             valide: {
                 len: [10]
             },
-            references: {
-                model: 'user',
-                key: 'id'
-            }
         },
         password: {
             type: DataTypes.STRING,
@@ -51,6 +51,12 @@ User.init(
         }
     },
     {
+        hooks: {
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData
+            }
+        },
         // create hooks for the password here using bcrypt.hash
         sequelize,
         timestamps: false,
