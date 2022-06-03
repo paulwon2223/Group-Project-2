@@ -33,14 +33,21 @@ User.init(
                 isEmail: true,
             }
         },
-        user_name: {
+        bio: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            valide: {
-                len: [10]
-            },
+            allowNull: true,
+            validate: {
+                len: [50]
+            }
         },
+        // user_name: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     unique: true,
+        //     valide: {
+        //         len: [10]
+        //     },
+        // },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -48,7 +55,8 @@ User.init(
             validate: {
                 len: [10]
             }
-        }
+        },
+        
     },
     {
         hooks: {
