@@ -15,50 +15,43 @@
     />
   </head>
   <body>
-    <nav class="navbar bg-none">
-      <div class="container-fluid">
-        <a id="nav" class="navbar-brand">console.log</a>
+    <div class="d-flex justify-content-around">
+      <div class="card" style="width: 18rem">
+        <img src="avatar.png" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h3 class="card-title">user</h3>
+          <h5 class="card-title">@user</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
       </div>
-    </nav>
-
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-4">
-          <div class="card" style="width: 18rem">
-            <img src="avatar.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h3 class="card-title">user</h3>
-              <h5 class="card-title">@user</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="post"
-                aria-label="post"
-              />
-              <button type="submit">post</button>
-            </form>
+      <div class="content-post">
+        <div class="post">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="post"
+              aria-label="post"
+            />
+            <button type="submit">post</button>
+          </form>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">user</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@user</h6>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">user</h5>
-              <h6 class="card-subtitle mb-2 text-muted">@user</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">API articles display here</div>
       </div>
     </div>
   </body>
