@@ -8,15 +8,16 @@ router.post("/", async(req, res) => {
             first_name: req.body.fname,
             last_name: req.body.lname,
             email: req.body.email,
-            password: req.body.password
-            // username: req.body.username,
+            password: req.body.password,
+            user_name: req.body.username
             // email: req.body.email,
-            // password: req.body.password,
+            // password: req.body.passwßord,
             // phone: req.body.phone,
         });
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = dbUserData.id || null;
             res.status(201).json(dbUserData);
         });
     } catch (error) {
@@ -28,7 +29,7 @@ router.post("/", async(req, res) => {
 //LOGIN
 // /api/users/login
 // body: { email, password }
-router.post("/login", async(req, res) => {
+router.post("/login", async (req, res) => {
     console.log(req.body);
     try {
         const dbUserData = await User.findOne({

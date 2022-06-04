@@ -26,4 +26,29 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const postdb = await Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (postdb.user_id === req.session.user_id) {
+      const deletePost = await Post.destroy({
+        where: {
+          id: req.params.id,
+        }
+      })
+      console.log('post was deleted');
+      res.status(200).json(deletePost);
+    } else {
+      res.status(402).json({message: "no post found"})
+    }
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;

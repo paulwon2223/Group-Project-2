@@ -8,7 +8,8 @@ fetch(requestUrl)
   .then(function (data) {
     console.log(data);
     console.log(data.results);
-  });
+  })
+  .catch((error) => console.log(error));
 
 
 const loginFormHandler = async (event) => {
@@ -42,15 +43,15 @@ const signup = async(event) => {
 
   const fname = document.getElementById("fnamesignup").value.trim();
   const lname = document.getElementById("lnamesignup").value.trim();
-  // const username = document.getElementById("#username").value.trim();
+  const username = document.getElementById("userinfoname").value.trim();
   const email = document.getElementById("emailsignup").value.trim();
   const password = document.getElementById("passwordsignup").value.trim();
   // const phoneNumer = document.querySelector("#phoneNumber").value.trim();
 
-  if (email && password && fname && lname) {
+  if (email && password && fname && lname && username) {
       const response = await fetch("/api/users", {
           method: "POST",
-          body: JSON.stringify({ email, password, lname, fname }),
+          body: JSON.stringify({ email, password, lname, fname, username }),
           headers: { "Content-Type": "application/json" },
       });
 
@@ -114,3 +115,23 @@ const logout = async() => {
 };
 
 document.querySelector("#logout").addEventListener("click", logout);
+
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/dashboard/${id}`, {
+      method: 'DELETE',
+    });
+
+    console.log(response);
+
+    if (response.ok) {
+      window.location.reload();
+    } else {
+      alert('Failed to delete project');
+    }
+  }
+};
+
+document.querySelectorAll('button[data-id]')?.forEach((btn) => btn.addEventListener('click', delButtonHandler));

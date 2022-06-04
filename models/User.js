@@ -40,14 +40,14 @@ User.init(
                 len: [50]
             }
         },
-        // user_name: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true,
-        //     valide: {
-        //         len: [10]
-        //     },
-        // },
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            valide: {
+                len: [10]
+            },
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,

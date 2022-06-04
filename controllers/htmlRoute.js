@@ -39,7 +39,12 @@ router.get("/dashboard", async (req, res) => {
         });
         console.log(user);
 
-        const dbPost = postData.map((userpost) =>  userpost.get({ plain: true }))
+        const dbPost = postData.map((userpost) =>  userpost.get({ plain: true })).map((post) => {
+            return {
+                ...post,
+                isOwned: req.session.user_id === post.user_id
+            }
+        })
         
 
         console.log(dbPost);
@@ -48,6 +53,7 @@ router.get("/dashboard", async (req, res) => {
             user: user.get({plain:true})
         })
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
     // try {
