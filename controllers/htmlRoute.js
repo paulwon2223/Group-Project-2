@@ -32,11 +32,20 @@ router.get("/dashboard", async (req, res) => {
             ],
         });
 
+        const user = await User.findOne({
+            where: {
+                id: req.session.user_id
+            }
+        });
+        console.log(user);
+
         const dbPost = postData.map((userpost) =>  userpost.get({ plain: true }))
         
+
         console.log(dbPost);
         res.render("dashboard", {
             dbPost,
+            user: user.get({plain:true})
         })
     } catch (err) {
         res.status(500).json(err);
