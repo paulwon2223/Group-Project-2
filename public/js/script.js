@@ -79,10 +79,10 @@ const newFormHandler = async (event) => {
     });
     console.log(post);
 
-    document.getElementById('userpost').textContent = post
+    // document.getElementById('userpost').textContent = post
 
     if (response.ok) {
-      // window.location.reload();
+      window.location.reload();
     } else {
       alert('Failed to create project');
     }

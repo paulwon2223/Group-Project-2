@@ -25,9 +25,6 @@ Post.init(
             valide: {
                 len: [250]
             }
-        },
-        created_day: {
-            type: DataTypes.STRING
         }
     },
     {
