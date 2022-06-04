@@ -32,14 +32,21 @@ User.init({
             isEmail: true,
         },
     },
-    user_name: {
+    bio: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        valide: {
-            len: [10],
+        allowNull: true,
+        validate: {
+            len: [50],
         },
     },
+    // user_name: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     unique: true,
+    //     valide: {
+    //         len: [10]
+    //     },
+    // },
     password: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -61,24 +68,6 @@ User.init({
     freezeTableName: true,
     underscored: true,
     modelName: "user",
-});
-
-class Profile extends Model {}
-
-Profile.init({
-    bio: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-            len: [50],
-        },
-    },
-}, {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "profile",
 });
 
 module.exports = User;
