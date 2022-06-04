@@ -28,6 +28,8 @@ fetch(apiUrl)
     }
   });
 
+
+  // google sign in
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
