@@ -1,0 +1,26 @@
+[
+    {
+        "first_name": "Jeremiah",
+        "last_name": "Cole",
+        "email": "colewrld04@gmail.com",
+        "password": "password123"
+    },
+    {
+        "first_name": "Luke",
+        "last_name": "Doncic",
+        "email": "lDoncic@yahoo.com",
+        "password": "password456"
+    },
+    {
+        "first_name": "Kanye",
+        "last_name": "West",
+        "email": "yeezy@aol.com",
+        "password": "password789"
+    },
+    {
+        "first_name": "Gunna",
+        "last_name": "Kitchens",
+        "email": "trapaGunna@apple.com",
+        "password": "password098"
+    }
+]
