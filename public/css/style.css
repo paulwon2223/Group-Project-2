@@ -277,3 +277,13 @@ footer {
 .content {
   padding: 30px;
 }
+
+.api-card {
+  border-radius: 10px;
+  background-color: #f2f4ff;
+  border-style: none;
+}
+
+.hidden {
+  display: none;
+}
