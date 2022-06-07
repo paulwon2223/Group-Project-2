@@ -13,18 +13,23 @@
     <div class="sign-in">
       <h3 class="title">Sign-In</h3>
       <label for="email">Email:</label>
-      <input class="input" type="email" id="email" name="email" size="35" /><br
-      /><br />
+      <input
+        class="input"
+        type="email"
+        id="loginemail"
+        name="email"
+        size="35"
+      /><br /><br />
       <label for="pwd">Password:</label>
       <input
         class="input"
         type="password"
-        id="pwd"
+        id="loginpwd"
         name="pwd"
         minlength="8"
         size="35"
       /><br /><br />
-      <input class="buttons-two" type="submit" />
+      <input id="signinbttn" class="buttons-two" type="submit" />
       <hr />
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </div>
@@ -37,7 +42,7 @@
       <input
         class="input-two"
         type="text"
-        id="fname"
+        id="fnamesignup"
         name="fname"
         size="35"
       /><br /><br />
@@ -45,7 +50,7 @@
       <input
         class="input-two"
         type="text"
-        id="lname"
+        id="lnamesignup"
         name="lname"
         size="35"
       /><br /><br />
@@ -53,8 +58,16 @@
       <input
         class="input-two"
         type="email"
-        id="email"
+        id="emailsignup"
         name="email"
+        size="35"
+      /><br /><br />
+      <label for="lname">Username: </label>
+      <input
+        class="input-two"
+        type="text"
+        id="username"
+        name="username"
         size="35"
       /><br /><br />
       <!-- <label for="phone">Enter a phone number:</label><br /><br />
@@ -71,12 +84,12 @@
       <input
         class="input-two"
         type="password"
-        id="pwd"
+        id="passwordsignup"
         name="pwd"
         minlength="8"
         size="35"
       /><br /><br />
-      <input class="buttons" type="submit" />
+      <input id="signupbttn" class="buttons" type="submit" />
       <hr />
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </div>

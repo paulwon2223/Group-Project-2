@@ -1,16 +1,145 @@
-<nav class="navbar bg-none">
-  <div class="container-fluid">
-    <a id="nav" class="navbar-brand">console.log</a>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>console.log - dashboard</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="dashboard">
+    <!-- ================================== styling ================================-->
+    <div class="top-left"></div>
+    <div class="bottom-right"></div>
+    <!-- ================================== nav ================================-->
 
-<div class="container">
-  <div class="row justify-content-between">
-    <div class="col-4">
-      <!-- profile card goes here -->
+    <nav class="navbar bg-none dash-nav">
+      <div class="container-fluid">
+        <a id="dash-nav" class="navbar-brand">console.log</a>
+        <form class="d-flex" role="search">
+          <button class="buttons" type="submit" id="logout">Sign Out</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- bootstrap container -->
+    <div class="d-flex justify-content-around content">
+      <!-- ================================== profile card ================================-->
+      {{!-- <div class="profile-card">
+        <img src="./public/img/avatar.png" class="profile-pic" />
+        <h3 class="profile-name">George Escobar</h3>
+        <h5 class="profile-username">@user</h5>
+
+        <hr class="line" />
+
+        <p class="mt-4">
+          I am a freelance IOS developer based out of Dallas, Tx
+        </p>
+      </div> --}}
+      {{#each dbPost}}
+        {{profile}}
+      {{/each}}
+
+
+      <!-- ================================== post input ================================-->
+      <div class="content-post">
+        <div class="post">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              id="postinput"
+              type="search"
+              placeholder="What's on yourt mind?"
+              aria-label="post"
+              size="75"
+            />
+            <button id="postbttn" class="dash-log-btn" type="submit">
+              log it
+            </button>
+          </form>
+        </div>
+        <!-- ================================== post card ================================-->
+
+        {{!-- <div class="card-post">
+          <h5 class="card-title">user</h5>
+          <h6 class="card-subtitle mb-2 text-muted">@user</h6>
+          <p id="userpost" class="card-text">lorem20</p>
+        </div> --}}
+        <br /><br />
+
+        {{#each dbPost}}
+            {{> post}}
+        {{/each}}
+
+
+
+        {{!-- <div class="card-post">
+          <h5 class="card-title">user</h5>
+          <h6 class="card-subtitle mb-2 text-muted">@user</h6>
+          <p id="userpost" class="card-text">test</p>
+        </div> --}}
+      </div>
+      <!-- <br /><br />
+        <div class="card-post">
+          <h5 class="card-title">user</h5>
+          <h6 class="card-subtitle mb-2 text-muted">@user</h6>
+          <p id="userpost" class="card-text">test</p>
+        </div>
+      </div> -->
+
+      <!-- ================================== API card ================================-->
+
+      <div id="apiNews" class="api-card">
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+        <br />
+        <br />
+        <div class="api-news">
+          <a class="news">API articles display here</a>
+        </div>
+      </div>
     </div>
-    <div class="col-4">
-      <!-- post cards go here -->
-    </div>
-  </div>
-</div>
+    <script src="./js/logout.js"></script>
+  </body>
+</html>
