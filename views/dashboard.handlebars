@@ -35,8 +35,19 @@
     <!-- bootstrap container -->
     <div class="d-flex justify-content-around content">
       <!-- ================================== profile card ================================-->
-      {{!-- <div class="profile-card">
-        <img src="./public/img/avatar.png" class="profile-pic" />
+      <div class="profile-card">
+        {{!-- <img src="./img/avatar.png" class="profile-pic" /> --}}
+        <div id="profile-container">
+          <image id="profileImage" src="./public/img/avatar.png" />
+        </div>
+        <input
+          id="imageUpload"
+          type="file"
+          name="profile_photo"
+          placeholder="Photo"
+          required=""
+          capture
+        />
         <h3 class="profile-name">George Escobar</h3>
         <h5 class="profile-username">@user</h5>
 
@@ -45,7 +56,7 @@
         <p class="mt-4">
           I am a freelance IOS developer based out of Dallas, Tx
         </p>
-      </div> --}}
+      </div>
       {{#each dbPost}}
         {{profile}}
       {{/each}}
@@ -73,13 +84,18 @@
         {{!-- <div class="card-post">
           <h5 class="card-title">user</h5>
           <h6 class="card-subtitle mb-2 text-muted">@user</h6>
-          <p id="userpost" class="card-text">lorem20</p>
-        </div> --}}
-        <br /><br />
+          <p id="userpost" class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magni necessitatibus quasi, sapiente repellat illum voluptates minima quidem unde blanditiis.</p>
+        </div>
+        <br /><br /> --}}
+<div class="post-lists">
 
         {{#each dbPost}}
             {{> post}}
         {{/each}}
+         {{#each dbPost}}
+            {{> post}}
+        {{/each}}
+</div>
 
 
 
