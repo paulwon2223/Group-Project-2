@@ -41,7 +41,7 @@ User.init(
       },
     },
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT('long'),
       allowNull: true,
     },
     user_name: {

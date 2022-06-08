@@ -26,7 +26,7 @@ router.get("/dashboard", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["first_name"],
+          attributes: ["first_name", "image"],
         },
       ],
     });
