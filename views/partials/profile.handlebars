@@ -1,0 +1,17 @@
+<div class="profile-card">
+        <!-- <img src="./public/img/avatar.png" class="profile-pic" /> -->
+        <div id="profile-container">
+          <img id="profileImage" src="data:image/png;base64,{{user.image}}" />
+        </div>
+      
+        <h3 class="profile-name">{{user.first_name}}</h3>
+        <h5 class="profile-username">{{user.email}}</h5>
+
+        <hr class="line" />
+
+        <div id="user-bio" class="mt-4">
+          {{user.bio}}
+        </div>
+        <button id="edit-btn" class="buttons">Edit</button>
+        <button id="save-btn" class="hidden buttons">Save</button>
+      </div>

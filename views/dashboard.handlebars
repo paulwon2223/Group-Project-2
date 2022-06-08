@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>console.log - dashboard</title>
-    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401&display=swap"
       rel="stylesheet"
@@ -27,7 +27,7 @@
       <div class="container-fluid">
         <a id="dash-nav" class="navbar-brand">console.log</a>
         <form class="d-flex" role="search">
-          <button class="buttons" type="submit" id="logout">Sign Out</button>
+          <button  id="logout" class="buttons" type="submit">Sign Out</button>
         </form>
       </div>
     </nav>
@@ -46,10 +46,18 @@
           I am a freelance IOS developer based out of Dallas, Tx
         </p>
       </div> --}}
-      {{#each dbPost}}
-        {{profile}}
-      {{/each}}
+      
+        {{> profile}}
 
+		<form ref='uploadForm' 
+			id='uploadForm' 
+			action='/upload' 
+			method='post' 
+			encType="multipart/form-data">
+				<input type="file" name="sampleFile" />
+				<input type='submit' value='Upload!' />
+		</form>		
+	
 
       <!-- ================================== post input ================================-->
       <div class="content-post">
@@ -77,9 +85,12 @@
         </div> --}}
         <br /><br />
 
-        {{#each dbPost}}
-            {{> post}}
-        {{/each}}
+        <div class="post-lists">
+          {{#each dbPost}}
+          {{> post}}
+          {{/each}}
+        </div>
+        
 
 
 
@@ -140,6 +151,7 @@
         </div>
       </div>
     </div>
-    <script src="./js/logout.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>

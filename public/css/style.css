@@ -8,6 +8,7 @@
 body {
   background-color: #f2f4ff;
   color: black;
+  overflow: hidden;
 }
 
 footer {
@@ -17,6 +18,16 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .profile-card {
+    display: none !important;
+  }
+
+  .api-card {
+    display: none;
+  }
 }
 
 .circle {
@@ -125,6 +136,12 @@ footer {
   z-index: 0;
 }
 
+.post-lists {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  height: calc(100vh - 158px);
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -175,6 +192,11 @@ footer {
   clear: both;
 } */
 
+.content-post {
+  flex: 3;
+  margin: 0 18px;
+}
+
 .card {
   border-color: black;
   border-style: solid;
@@ -211,7 +233,8 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-style: none;
   color: black;
-  width: 25%;
+  width: 340px;
+  height: fit-content;
 }
 
 .profile-pic {
@@ -259,6 +282,7 @@ footer {
   border-style: none;
   color: black;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .news {
@@ -276,4 +300,39 @@ footer {
 
 .content {
   padding: 30px;
+}
+
+.api-card {
+  border-radius: 10px;
+  background-color: #f2f4ff;
+  border-style: none;
+  height: fit-content;
+}
+
+.hidden {
+  display: none;
+}
+
+#imageUpload {
+  display: none;
+}
+
+#profileImage {
+  cursor: pointer;
+}
+
+#profile-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#profile-container img {
+  width: 150px;
+  height: 150px;
 }

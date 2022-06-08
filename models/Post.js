@@ -19,6 +19,14 @@ Post.init(
                 key: 'id'
             }
         },
+        // picture: {
+        //     type: DataTypes.BLOB,
+        //     allowNull: true,
+        //     references:{
+        //         model: 'user',
+        //         key: 'image'
+        //     }
+        // },
         post: {
             type: DataTypes.STRING,
             allowNull: false,

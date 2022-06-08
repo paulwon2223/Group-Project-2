@@ -1,5 +1,18 @@
 <div class="card-post">
   <h5 class="card-title">{{user.first_name}}</h5>
-  <h6 class="card-subtitle mb-2 text-muted">user</h6>
+  <h6 class="card-subtitle mb-2 text-muted">{{user.user_name}}</h6>
   <p id="userpost" class="card-text">{{post}}</p>
+  {{#if isOwned}}
+    <button id="deletebttn" data-id="{{id}}">delete</button>
+  {{/if}}
 </div>
+
+{{!-- UPLOADING A PICTURE, NEEDS HANDLEBARS I THINK --}}
+{{!-- <form ref="uploadForm"
+id="uploadForm"
+action="http://localhost:3001/upload"
+method="post"
+enctype="multipart/form-data">
+<input type="file" name="sampleFile">
+<input type="submit" value="'Upload!">
+</form> --}}
