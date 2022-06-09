@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 //ADDS BIO
 router.put('/bio', async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body.bio)
     const dbUserData = await User.update(
       {
         bio: req.body.bio
@@ -43,7 +43,6 @@ router.put('/bio', async (req, res) => {
     res.status(500).json(error);
   }
 });
-
 
 //LOGIN
 // /api/users/login
