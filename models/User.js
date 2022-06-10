@@ -37,7 +37,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        len: [50],
+        len: [10],
       },
     },
     image: {
