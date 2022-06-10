@@ -40,6 +40,10 @@ User.init(
                 len: [50]
             }
         },
+        image: {
+            type: DataTypes.TEXT("long"),
+            allowNull: true,
+        },
         user_name: {
             type: DataTypes.STRING,
             allowNull: false,

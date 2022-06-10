@@ -1,3 +1,5 @@
+const divContainer = document.getElementById("apiNews");
+
 const requestUrl =
   "https://newsdata.io/api/1/news?apikey=pub_7851a852526cac7c6cae4c1a0b0af3705169&category=technology";
 
@@ -7,9 +9,19 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log(data);
-    console.log(data.results);
-  })
-  .catch((error) => console.log(error));
+    divContainer.innerHTML = "";
+    for (let i = 0; i < 10; i++) {
+      const divElement = document.createElement("div");
+      divElement.setAttribute("class", "api-news");
+      const aTag = document.createElement("a");
+      aTag.setAttribute("class", "news");
+      aTag.textContent = data.results[i].title;
+      aTag.setAttribute("href", data.results[i].link);
+      aTag.setAttribute("target", "_blank");
+      divElement.appendChild(aTag);
+      divContainer.appendChild(divElement);
+    }
+  });
 
 
 const loginFormHandler = async (event) => {
@@ -137,13 +149,108 @@ const delButtonHandler = async (event) => {
 document.querySelectorAll('button[data-id]')?.forEach((btn) => btn.addEventListener('click', delButtonHandler));
 
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  // var profile = googleUser.getBasicProfile();
+  // // $("#googlename").text(profile.getName());
+  // // $("#googlemail").text(profile.getEmail());
+  // // $("#image").attr('src', profile.getImageUrl());
+
+  // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  // console.log('Name: ' + profile.getName());
+  // console.log('Image URL: ' + profile.getImageUrl());
+  // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  console.log('User is ' + JSON.stringify(googleUser));
+};
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    alert('signed out')
+  })
 }
 
 gapi.load('auth2', function () {
   gapi.auth2.init();
-})
+});
+
+const editBtn = document.getElementById("edit-btn");
+const saveBtn = document.getElementById("save-btn");
+const uploadForm = document.getElementById("uploadForm");
+const fileBtn = document.getElementById("file-btn");
+const uploadBtn = document.getElementById("upload-btn");
+
+editBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const bioElement = document.getElementById("user-bio");
+  const bio = bioElement.innerText;
+
+  const input = document.createElement("input");
+  input.setAttribute("value", bio);
+  input.setAttribute("id", "test-input");
+
+  bioElement.replaceWith(input);
+
+  editBtn.classList.add("hidden");
+  saveBtn.classList.remove("hidden");
+  uploadForm.classList.remove("hidden");
+  fileBtn.classList.remove("hidden");
+  uploadBtn.classList.remove("hidden");
+});
+
+saveBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const inputEle = document.getElementById("test-input");
+  const newBio = inputEle.value;
+
+  fetch("/api/users/bio", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      bio: newBio,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("SUCCESS: ", data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  const bioElement = document.createElement("div");
+  bioElement.innerText = newBio;
+  bioElement.setAttribute("id", "user-bio");
+
+  inputEle.replaceWith(bioElement);
+
+  editBtn.classList.remove("hidden");
+  saveBtn.classList.add("hidden");
+});
+
+document
+  .querySelectorAll("button[data-id]")
+  ?.forEach((btn) => btn.addEventListener("click", delButtonHandler));
+
+$("#profileImage").click(function (e) {
+  $("#imageUpload").click();
+});
+
+function fasterPreview(uploader) {
+  // console.log("TESTING PIC", uploader.files)
+  fetch("/upload", {
+    method: "Post",
+    body: uploader.files[0],
+  });
+  if (uploader.files && uploader.files[0]) {
+    $("#profileImage").attr(
+      "src",
+      window.URL.createObjectURL(uploader.files[0])
+    );
+  }
+}
+$("#imageUpload").change(function () {
+  fasterPreview(this);
+});

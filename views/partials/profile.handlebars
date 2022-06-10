@@ -1,11 +1,45 @@
 <div class="profile-card">
-  <img src="./public/img/avatar.png" class="profile-pic" />
-  <h3 class="profile-name">{{user.first_name}} {{user.last_name}}</h3>
+  <!-- <img src="./public/img/avatar.png" class="profile-pic" /> -->
+  <div id="profile-container">
+    <img
+      class="profile-pic"
+      id="profileImage"
+      src="data:image/png;base64,{{user.image}}"
+    />
+  </div>
+
+  <div id="file-uploader">
+
+    <form
+      ref="uploadForm"
+      id="uploadForm"
+      action="/upload"
+      method="post"
+      encType="multipart/form-data"
+    >
+      <input
+        class="upload hidden"
+        id="file-btn"
+        type="file"
+        name="sampleFile"
+      />
+      <input
+        class="upload hidden"
+        id="upload-btn"
+        type="submit"
+        value="Upload!"
+      />
+    </form>
+  </div>
+
+  <h3 class="profile-name">{{user.first_name}}</h3>
   <h5 class="profile-username">{{user.user_name}}</h5>
 
   <hr class="line" />
 
-  <p class="mt-4">
-    I am a freelance IOS developer based out of Dallas, Tx
-  </p>
+  <div id="user-bio" class="mt-4">
+    {{user.bio}}
+  </div>
+  <button id="edit-btn" class="buttons">Edit</button>
+  <button id="save-btn" class="hidden buttons">Save</button>
 </div>

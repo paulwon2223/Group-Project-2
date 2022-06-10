@@ -26,6 +26,25 @@ router.post("/", async(req, res) => {
     }
 });
 
+//ADDS BIO
+router.put("/bio", async (req, res) => {
+    try {
+      console.log(req.body);
+      const dbUserData = await User.update(
+        {
+          bio: req.body.bio,
+        },
+        {
+          where: { id: req.session.user_id },
+        }
+      );
+      res.status(200).json(dbUserData);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+    }
+  });
+
 //LOGIN
 // /api/users/login
 // body: { email, password }
