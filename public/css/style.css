@@ -21,9 +21,9 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
-body {
-  margin: 0;
-}
+  body {
+    margin: 0;
+  }
 
   .profile-card {
     display: none !important;
@@ -45,7 +45,6 @@ body {
   .sign-in {
     width: 300px;
     height: 340px;
-
   }
 
   .sign-up {
@@ -108,8 +107,7 @@ body {
   border-color: #5f0a87;
   border-style: solid;
   color: #5f0a87;
-  transition:  0.5s;
-  
+  transition: 0.5s;
 }
 
 .buttons-two {
@@ -313,6 +311,32 @@ body {
   padding: 10px 10px;
 }
 
+.picture {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+  justify-content: left;
+  align-items: center;
+}
+
+.post-header {
+  display: flex;
+
+}
+
+.mockup {
+  margin-top: 25%;
+  margin-left: 10%;
+  height: 300px;
+  width: 300px;
+}
+
+.post-text {
+  margin-top: 16px;
+}
+
 .dash-log-btn {
   width: 25%;
   border-style: none;
@@ -328,8 +352,7 @@ body {
   color: #5f0a87;
 }
 
-/* .card-post {
-  display: inline-block;
+.card-post {
   padding: 20px 20px;
   background-color: #f2f4ff;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -339,9 +362,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-style: none;
   color: black;
-  width: 40%;
   margin-bottom: 8px;
-} */
+}
 
 .incorrect-pw {
   color: red;
@@ -352,8 +374,7 @@ body {
 }
 
 .news {
-    color: black;
-
+  color: black;
 }
 
 .content {
@@ -370,7 +391,6 @@ body {
   line-height: 30px;
   overflow: scroll;
 }
-
 
 .hidden {
   display: none;
