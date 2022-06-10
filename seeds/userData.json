@@ -1,26 +1,142 @@
 [
-    {
-        "first_name": "Jeremiah",
-        "last_name": "Cole",
-        "email": "colewrld04@gmail.com",
-        "password": "password123"
-    },
-    {
-        "first_name": "Luke",
-        "last_name": "Doncic",
-        "email": "lDoncic@yahoo.com",
-        "password": "password456"
-    },
-    {
-        "first_name": "Kanye",
-        "last_name": "West",
-        "email": "yeezy@aol.com",
-        "password": "password789"
-    },
-    {
-        "first_name": "Gunna",
-        "last_name": "Kitchens",
-        "email": "trapaGunna@apple.com",
-        "password": "password098"
-    }
+  {
+    "first_name": "Jeremiah",
+    "last_name": "Cole",
+    "email": "colewrld04@gmail.com",
+    "password": "password123",
+    "user_name": "Jeremiah269"
+  },
+  {
+    "first_name": "Luka",
+    "last_name": "Doncic",
+    "email": "lDoncic@yahoo.com",
+    "password": "password456",
+    "user_name": "Luka945"
+  },
+  {
+    "first_name": "Kanye",
+    "last_name": "West",
+    "email": "yeezy@aol.com",
+    "password": "password789",
+    "user_name": "Kanye573"
+  },
+  {
+    "first_name": "Dirk",
+    "last_name": "Nowitzki",
+    "email": "Dirk@gmail.com",
+    "password": "password111222",
+    "user_name": "Dirk79"
+  },
+  {
+    "first_name": "Patrick",
+    "last_name": "Mahomes",
+    "email": "mahomeboy@gmail.com",
+    "password": "chiefs12334",
+    "user_name": "Patrick852"
+  },
+  {
+    "first_name": "Tom",
+    "last_name": "Brady",
+    "email": "Tb12@gmail.com",
+    "password": "password111444",
+    "user_name": "Tom645"
+  },
+  {
+    "first_name": "Marques",
+    "last_name": "Brownlee",
+    "email": "mbrownlee@gmail.com",
+    "password": "password111333",
+    "user_name": "Marques339"
+  },
+  {
+    "first_name": "Cristiano",
+    "last_name": "Ronaldo",
+    "email": "cr7@gmail.com",
+    "password": "password111444",
+    "user_name": "Cristiano761"
+  },
+  {
+    "first_name": "Mo",
+    "last_name": "Salah",
+    "email": "salah@gmail.com",
+    "password": "password111555",
+    "user_name": "Mo458"
+  },
+  {
+    "first_name": "Serena",
+    "last_name": "Williams",
+    "email": "goat@gmail.com",
+    "password": "password222111",
+    "user_name": "Serena679"
+  },
+  {
+    "first_name": "Alicia",
+    "last_name": "Keys",
+    "email": "Akeys@gmail.com",
+    "password": "password222333",
+    "user_name": "Alicia454"
+  },
+  {
+    "first_name": "Unbox",
+    "last_name": "Therapy",
+    "email": "unbox.therapy@gmail.com",
+    "password": "password000999",
+    "user_name": "Unbox802"
+  },
+  {
+    "first_name": "Conor",
+    "last_name": "McGregor",
+    "email": "conor@gmail.com",
+    "password": "password000888",
+    "user_name": "Conor353"
+  },
+  {
+    "first_name": "Tech",
+    "last_name": "Reviews",
+    "email": "tech.reviews@gmail.com",
+    "password": "password000777",
+    "user_name": "Tech171"
+  },
+  {
+    "first_name": "Venus",
+    "last_name": "Williams",
+    "email": "venus@gmail.com",
+    "password": "password000666",
+    "user_name": "Venus458"
+  },
+  {
+    "first_name": "Gal",
+    "last_name": "Gadot",
+    "email": "ggadot@gmail.com",
+    "password": "password000444",
+    "user_name": "Gal221"
+  },
+  {
+    "first_name": "Son",
+    "last_name": "HuengMin",
+    "email": "son@gmail.com",
+    "password": "password333555",
+    "user_name": "Son127"
+  },
+  {
+    "first_name": "CeeDee",
+    "last_name": "Lamb",
+    "email": "lamb.talk@gmail.com",
+    "password": "password214",
+    "user_name": "CeeDee29"
+  },
+  {
+    "first_name": "Mark",
+    "last_name": "Cuban",
+    "email": "mark.cuban@gmail.com",
+    "password": "dallasmavs214",
+    "user_name": "Mark411"
+  },
+  {
+    "first_name": "Jerry",
+    "last_name": "Jones",
+    "email": "jerry@gmail.com",
+    "password": "cowboys214",
+    "user_name": "Jerry283"
+  }
 ]
