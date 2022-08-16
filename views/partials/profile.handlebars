@@ -1,11 +1,12 @@
 <div class="profile-card">
   <!-- <img src="./public/img/avatar.png" class="profile-pic" /> -->
   <div id="profile-container">
-    <img
-      class="profile-pic"
-      id="profileImage"
-      src="data:image/png;base64,{{user.image}}"
-    />
+    {{#if user.image}}
+      <img src="data:image/png;base64,{{user.image}}" class="profile-pic" />
+    {{/if}}
+    {{#unless user.image}}
+      <img src="./img/avatar.png" class="profile-pic" />
+    {{/unless}}
   </div>
 
   <div id="file-uploader">

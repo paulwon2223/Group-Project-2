@@ -323,7 +323,6 @@ footer {
 
 .post-header {
   display: flex;
-
 }
 
 .mockup {
@@ -366,7 +365,7 @@ footer {
 }
 
 .incorrect-pw {
-  color: red;
+  color: black;
 }
 
 .api-news {
